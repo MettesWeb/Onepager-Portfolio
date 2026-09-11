@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio von Marit Silva Gebhardt: Content, digitales Marketing und KI-gestützte Workflows.">
+  <meta name="theme-color" content="#07132f">
+  <title>Marit Silva Gebhardt | Digital Portfolio</title>
+  <script>
+    (() => {
+      const navigation = performance.getEntriesByType?.('navigation')?.[0];
+      const skipRequested = new URLSearchParams(location.search).get('skipIntro') === '1';
+      if (skipRequested && navigation?.type !== 'reload') document.documentElement.classList.add('skip-site-intro');
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body class="home-page">
+  <a class="skip-link" href="#main" data-de="Zum Inhalt springen" data-en="Skip to content">Zum Inhalt springen</a>
+
+  <div class="intro-screen" id="introScreen" aria-label="Animierte Einführung">
+    <div class="intro-atmosphere" aria-hidden="true"></div>
+    <canvas id="nameCanvas" aria-hidden="true"></canvas>
+    <div class="intro-stage">
+      <div class="countdown" id="countdown" aria-hidden="true">3</div>
+      <svg class="intro-hexagon" id="introHexagon" viewBox="0 0 600 600" aria-hidden="true">
+        <defs>
+          <linearGradient id="hexGold" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#fff7df"/>
+            <stop offset=".34" stop-color="#ffd69c"/>
+            <stop offset=".72" stop-color="#d99955"/>
+            <stop offset="1" stop-color="#fff1ca"/>
+          </linearGradient>
+          <filter id="hexGlow" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="8" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g class="hex-depth" fill="none" stroke="url(#hexGold)">
+          <polygon class="hex-back" points="300,78 496,191 496,417 300,530 104,417 104,191"/>
+          <polygon class="hex-front" points="300,58 516,183 516,433 300,558 84,433 84,183"/>
+          <path class="hex-detail" d="M300 58v500M84 183l432 250M516 183L84 433M104 191l196 117 196-117M104 417l196-109 196 109"/>
+          <circle class="hex-core" cx="300" cy="308" r="9"/>
+          <g class="hex-nodes" fill="#ffe3b3" stroke="none">
+            <circle cx="300" cy="58" r="5"/><circle cx="516" cy="183" r="5"/><circle cx="516" cy="433" r="5"/>
+            <circle cx="300" cy="558" r="5"/><circle cx="84" cy="433" r="5"/><circle cx="84" cy="183" r="5"/>
+          </g>
+        </g>
+      </svg>
+      <div class="intro-flash" id="introFlash" aria-hidden="true"></div>
+      <div class="intro-name" id="introName" aria-hidden="true"><span>MARIT SILVA</span><span>GEBHARDT</span></div>
+    </div>
+    <button class="skip-intro" id="skipIntro" type="button" data-de="Intro überspringen" data-en="Skip intro">Intro überspringen</button>
+  </div>
+
+  <div class="scroll-orbit" aria-hidden="true"><span id="scrollComet"></span></div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Marit Silva Gebhardt – Startseite">
+      <span class="brand-mark">MSG</span>
+      <span class="brand-name">Marit Silva Gebhardt</span>
+    </a>
+    <nav class="main-nav" aria-label="Hauptnavigation">
+      <a href="#about" data-de="Über mich" data-en="About">Über mich</a>
+      <a href="#skills" data-de="Skills" data-en="Skills">Skills</a>
+      <a href="portfolio.html" data-de="Portfolio" data-en="Portfolio">Portfolio</a>
+      <a href="#contact" data-de="Kontakt" data-en="Contact">Kontakt</a>
+    </nav>
+    <div class="language-switch" role="group" aria-label="Sprache auswählen">
+      <button type="button" class="lang-btn is-active" data-lang="de" aria-pressed="true">DE</button>
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section-shell" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow" data-de="Digital Marketing · Content · KI-Workflows" data-en="Digital Marketing · Content · AI Workflows">Digital Marketing · Content · KI-Workflows</p>
+          <h1 id="hero-title" class="kinetic-name" aria-label="Marit Silva Gebhardt">Marit Silva<br>Gebhardt</h1>
+          <p class="hero-role">Digital Marketing &amp; AI Workflow Assistant</p>
+          <p class="hero-pitch" data-de="Ich verbinde digitales Marketing, Content und Webdesign mit KI-gestützten Workflows und ersten Automatisierungen. Dabei bringe ich kreative Ideen, eine strukturierte Arbeitsweise und langjährige internationale B2B-Erfahrung zusammen." data-en="I combine digital marketing, content and web design with AI-supported workflows and initial automations. My work brings together creative ideas, a structured approach and many years of international B2B experience.">Ich verbinde digitales Marketing, Content und Webdesign mit KI-gestützten Workflows und ersten Automatisierungen. Dabei bringe ich kreative Ideen, eine strukturierte Arbeitsweise und langjährige internationale B2B-Erfahrung zusammen.</p>
+          <div class="hero-actions">
+            <a class="button button-secondary" href="assets/Marit-Silva-Gebhardt-Lebenslauf.pdf" target="_blank" rel="noopener" data-de="Lebenslauf ansehen" data-en="View résumé">Lebenslauf ansehen</a>
+            <a class="linkedin-button" href="https://www.linkedin.com/in/marit-silva-gebhardt/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn-Profil von Marit Silva Gebhardt öffnen" title="LinkedIn-Profil öffnen"><span aria-hidden="true">in</span></a>
+          </div>
+        </div>
+
+        <div class="hero-system reveal" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="orbit orbit-three"></div>
+          <div class="core"><span>IDEA</span><strong>→</strong><span>IMPACT</span></div>
+          <span class="satellite satellite-a">AI</span>
+          <span class="satellite satellite-b">WEB</span>
+          <span class="satellite satellite-c">CONTENT</span>
+        </div>
+      </div>
+      <div class="hero-meta reveal" aria-label="Kurzprofil">
+        <span data-de="Remote · Teilzeit" data-en="Remote · Part-time">Remote · Teilzeit</span>
+        <span data-de="Deutsch · Englisch C1" data-en="German · English C1">Deutsch · Englisch C1</span>
+        <span data-de="Internationaler B2B-Hintergrund" data-en="International B2B background">Internationaler B2B-Hintergrund</span>
+      </div>
+    </section>
+
+    <section class="belief-band reveal" aria-label="Kernbotschaft">
+      <p data-de="Kreativ denken." data-en="Think creatively.">Kreativ denken.</p>
+      <p data-de="Strukturiert umsetzen." data-en="Build with structure.">Strukturiert umsetzen.</p>
+      <p data-de="Lösungsorientiert handeln." data-en="Act with solutions in mind.">Lösungsorientiert handeln.</p>
+    </section>
+
+    <section class="section-shell about" id="about" aria-labelledby="about-title">
+      <div class="section-heading reveal">
+        <h2 id="about-title" class="kinetic-heading" data-de="Ideen verstehen. Zusammenhänge sehen. Lösungen entwickeln." data-en="Understand ideas. See connections. Build solutions.">Ideen verstehen. Zusammenhänge sehen. Lösungen entwickeln.</h2>
+      </div>
+
+      <div class="about-layout">
+        <div class="about-copy reveal">
+          <p data-de="Mein Name ist Marit Silva Gebhardt und ich glaube daran, dass gute digitale Lösungen Menschen im Arbeitsalltag wirklich weiterbringen können. Dafür verbinde ich digitale Werkzeuge mit Kreativität, Struktur und einem Blick für Zusammenhänge. Mein Schwerpunkt liegt dabei auf Content, digitalem Marketing und KI-gestützten Workflows." data-en="My name is Marit Silva Gebhardt, and I believe good digital solutions can make a real difference in people's everyday work. I combine digital tools with creativity, structure and an eye for connections. My focus is on content, digital marketing and AI-supported workflows.">Mein Name ist Marit Silva Gebhardt und ich glaube daran, dass gute digitale Lösungen Menschen im Arbeitsalltag wirklich weiterbringen können. Dafür verbinde ich digitale Werkzeuge mit Kreativität, Struktur und einem Blick für Zusammenhänge. Mein Schwerpunkt liegt dabei auf Content, digitalem Marketing und KI-gestützten Workflows.</p>
+          <p data-de="Mein beruflicher Hintergrund liegt im internationalen B2B-Bereich. Dadurch bringe ich viel Erfahrung im Umgang mit unterschiedlichen Menschen und Anforderungen, Kundenverständnis sowie eine zuverlässige und strukturierte Arbeitsweise mit. Zusätzlich beschäftige ich mich seit längerer Zeit mit Content-Erstellung und digitalem Marketing. Innerhalb der letzten drei Monate habe ich mein Wissen intensiv um Webseitengestaltung mit KI-Unterstützung, digitale Anwendungen, Content-Systeme und erste Automatisierungen erweitert." data-en="My professional background is in international B2B. It has given me extensive experience with different people and requirements, a strong understanding of customers, and a reliable and structured way of working. I have also been working with content creation and digital marketing for some time. Over the past three months, I have expanded my skills intensively to include AI-supported web design, digital applications, content systems and initial automations.">Mein beruflicher Hintergrund liegt im internationalen B2B-Bereich. Dadurch bringe ich viel Erfahrung im Umgang mit unterschiedlichen Menschen und Anforderungen, Kundenverständnis sowie eine zuverlässige und strukturierte Arbeitsweise mit. Zusätzlich beschäftige ich mich seit längerer Zeit mit Content-Erstellung und digitalem Marketing. Innerhalb der letzten drei Monate habe ich mein Wissen intensiv um Webseitengestaltung mit KI-Unterstützung, digitale Anwendungen, Content-Systeme und erste Automatisierungen erweitert.</p>
+          <p data-de="Was mich auszeichnet, ist die Verbindung aus Kreativität, schneller Auffassungsgabe und lösungsorientiertem Denken. Ich erkenne Zusammenhänge, arbeite mich selbstständig in neue Themen ein und setze Ideen Schritt für Schritt praktisch um." data-en="What sets me apart is the combination of creativity, quick comprehension and solution-oriented thinking. I recognise connections, independently familiarise myself with new topics and turn ideas into practical results step by step.">Was mich auszeichnet, ist die Verbindung aus Kreativität, schneller Auffassungsgabe und lösungsorientiertem Denken. Ich erkenne Zusammenhänge, arbeite mich selbstständig in neue Themen ein und setze Ideen Schritt für Schritt praktisch um.</p>
+          <p data-de="Jetzt suche ich eine Remote-Teilzeitstelle, in der ich meine bisherige Berufserfahrung mit meinen neuen digitalen Fähigkeiten verbinden kann. Besonders wichtig ist mir ein Unternehmen, das Eigeninitiative schätzt, Entwicklung ermöglicht und gemeinsam neue Lösungen umsetzen möchte. Nehmen Sie gerne Kontakt mit mir auf, um eine mögliche Zusammenarbeit zu besprechen und herauszufinden, ob ich die passende Ergänzung für Ihr Unternehmen bin." data-en="I am now looking for a remote part-time role where I can combine my professional experience with my new digital skills. I am particularly interested in a company that values initiative, supports development and wants to implement new solutions together. Please feel free to contact me to discuss a potential collaboration and find out whether I could be the right addition to your company.">Jetzt suche ich eine Remote-Teilzeitstelle, in der ich meine bisherige Berufserfahrung mit meinen neuen digitalen Fähigkeiten verbinden kann. Besonders wichtig ist mir ein Unternehmen, das Eigeninitiative schätzt, Entwicklung ermöglicht und gemeinsam neue Lösungen umsetzen möchte. Nehmen Sie gerne Kontakt mit mir auf, um eine mögliche Zusammenarbeit zu besprechen und herauszufinden, ob ich die passende Ergänzung für Ihr Unternehmen bin.</p>
+        </div>
+
+        <figure class="about-portrait reveal">
+          <img src="assets/marit-silva-gebhardt-portrait.png" alt="Marit Silva Gebhardt arbeitet am Laptop in einem hellen Homeoffice">
+        </figure>
+      </div>
+    </section>
+
+    <section class="tools-showcase" aria-label="Tools und Plattformen">
+      <div class="tool-marquee reveal">
+        <div class="tool-track">
+          <div class="tool-chip"><b class="tone-aqua">GPT</b><span>ChatGPT</span></div><div class="tool-chip"><b class="tone-copper">Cl</b><span>Claude</span></div><div class="tool-chip"><b class="tone-blue">NLM</b><span>NotebookLM</span></div><div class="tool-chip"><b class="tone-rose">n8n</b><span>n8n</span></div><div class="tool-chip"><b class="tone-violet">Mk</b><span>Make</span></div><div class="tool-chip"><b class="tone-gold">&lt;/&gt;</b><span>HTML &amp; CSS</span></div><div class="tool-chip"><b class="tone-neutral">GH</b><span>GitHub</span></div><div class="tool-chip"><b class="tone-blue">CF</b><span>Cloudflare</span></div><div class="tool-chip"><b class="tone-copper">Po</b><span>Polsia</span></div><div class="tool-chip"><b class="tone-violet">1P</b><span>Onepage.io</span></div><div class="tool-chip"><b class="tone-blue">Ca</b><span>Canva</span></div><div class="tool-chip"><b class="tone-copper">El</b><span>ElevenLabs</span></div><div class="tool-chip"><b class="tone-neutral">No</b><span>Notion</span></div><div class="tool-chip"><b class="tone-gold">Mi</b><span>Miro</span></div><div class="tool-chip"><b class="tone-rose">Br</b><span>Brevo</span></div><div class="tool-chip"><b class="tone-violet">CRM</b><span>CRM-Systeme</span></div><div class="tool-chip"><b class="tone-gold">GW</b><span>Google Workspace</span></div><div class="tool-chip"><b class="tone-rose">KA</b><span>Kling AI</span></div><div class="tool-chip"><b class="tone-violet">LA</b><span>Leonardo AI</span></div><div class="tool-chip"><b class="tone-aqua">Su</b><span>Suno</span></div><div class="tool-chip"><b class="tone-rose">YT</b><span>YouTube</span></div>
+          <div class="tool-chip" aria-hidden="true"><b class="tone-aqua">GPT</b><span>ChatGPT</span></div><div class="tool-chip" aria-hidden="true"><b class="tone-copper">Cl</b><span>Claude</span></div><div class="tool-chip" aria-hidden="true"><b class="tone-blue">NLM</b><span>NotebookLM</span></div><div class="tool-chip" aria-hidden="true"><b class="tone-rose">n8n</b><span>n8n</span></div><div class="tool-chip" aria-hidden="true"><b class="tone-violet">Mk</b><span>Make</span></div><div class="tool-chip" aria-hidden="true"><b class="tone-gold">&lt;/&gt;</b><span>HTML &amp; CSS</span></div><div class="tool-chip" aria-hidden="true"><b class="tone-neutral">GH</b><span>GitHub</span></div><div class="tool-chip" aria-hidden="true"><b class="tone-blue">CF</b><span>Cloudflare</span></div><div class="tool-chip" aria-hidden="true"><b class="tone-copper">Po</b><span>Polsia</span></div><div class="tool-chip" aria-hidden="true"><b class="tone-violet">1P</b><span>Onepage.io</span></div><div class="tool-chip" aria-hidden="true"><b class="tone-blue">Ca</b><span>Canva</span></div><div class="tool-chip" aria-hidden="true"><b class="tone-copper">El</b><span>ElevenLabs</span></div><div class="tool-chip" aria-hidden="true"><b class="tone-neutral">No</b><span>Notion</span></div><div class="tool-chip" aria-hidden="true"><b class="tone-gold">Mi</b><span>Miro</span></div><div class="tool-chip" aria-hidden="true"><b class="tone-rose">Br</b><span>Brevo</span></div><div class="tool-chip" aria-hidden="true"><b class="tone-violet">CRM</b><span>CRM-Systeme</span></div><div class="tool-chip" aria-hidden="true"><b class="tone-gold">GW</b><span>Google Workspace</span></div><div class="tool-chip" aria-hidden="true"><b class="tone-rose">KA</b><span>Kling AI</span></div><div class="tool-chip" aria-hidden="true"><b class="tone-violet">LA</b><span>Leonardo AI</span></div><div class="tool-chip" aria-hidden="true"><b class="tone-aqua">Su</b><span>Suno</span></div><div class="tool-chip" aria-hidden="true"><b class="tone-rose">YT</b><span>YouTube</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell skills" id="skills" aria-labelledby="skills-title">
+      <div class="section-heading reveal">
+        <h2 id="skills-title" class="kinetic-heading" data-de="Sechs Bereiche. Eine gemeinsame Richtung." data-en="Six areas. One shared direction.">Sechs Bereiche. Eine gemeinsame Richtung.</h2>
+      </div>
+
+      <div class="skills-grid">
+        <article class="skill-card reveal"><h3 data-de="KI & Prompting" data-en="AI & Prompting">KI & Prompting</h3><p data-de="Recherche, Ideenentwicklung, Prompting sowie Strukturierung von Texten, Bildern und Content-Konzepten." data-en="Research, ideation, prompting and structuring text, visuals and content concepts.">Recherche, Ideenentwicklung, Prompting sowie Strukturierung von Texten, Bildern und Content-Konzepten.</p><p class="used-tools"><span data-de="Verwendete Tools" data-en="Tools used">Verwendete Tools</span>ChatGPT · Claude · NotebookLM · Leonardo AI</p></article>
+        <article class="skill-card reveal"><h3 data-de="Workflow & Automation" data-en="Workflow & Automation">Workflow & Automation</h3><p data-de="Arbeitsabläufe erfassen, wiederkehrende Schritte erkennen und erste Automatisierungen konzipieren." data-en="Mapping processes, identifying recurring steps and designing initial automations.">Arbeitsabläufe erfassen, wiederkehrende Schritte erkennen und erste Automatisierungen konzipieren.</p><p class="used-tools"><span data-de="Verwendete Tools" data-en="Tools used">Verwendete Tools</span>n8n · Make · ChatGPT</p></article>
+        <article class="skill-card reveal"><h3 data-de="Webdesign" data-en="Web Design">Webdesign</h3><p data-de="Onepager, Landingpages und kleinere Webprojekte mit KI-Unterstützung gestalten und veröffentlichen." data-en="Designing and publishing one-pagers, landing pages and smaller web projects with AI support.">Onepager, Landingpages und kleinere Webprojekte mit KI-Unterstützung gestalten und veröffentlichen.</p><p class="used-tools"><span data-de="Verwendete Tools" data-en="Tools used">Verwendete Tools</span>HTML · CSS · GitHub · Cloudflare · Polsia · Onepage.io</p></article>
+        <article class="skill-card reveal"><h3 data-de="Content & E-Commerce" data-en="Content & E-Commerce">Content & E-Commerce</h3><p data-de="Blog-, Social- und Produkt-Content planen, aufbereiten und über verschiedene Kanäle verbinden." data-en="Planning, producing and connecting blog, social and product content across channels.">Blog-, Social- und Produkt-Content planen, aufbereiten und über verschiedene Kanäle verbinden.</p><p class="used-tools"><span data-de="Verwendete Tools" data-en="Tools used">Verwendete Tools</span>Canva · ChatGPT · NotebookLM · Brevo · TikTok · Instagram · Pinterest · YouTube</p></article>
+        <article class="skill-card reveal"><h3 data-de="Creative Media" data-en="Creative Media">Creative Media</h3><p data-de="Grafiken, Präsentationen, KI-Bilder, Videos, Voiceovers und audiovisuelle Inhalte entwickeln." data-en="Creating graphics, presentations, AI images, videos, voiceovers and audiovisual content.">Grafiken, Präsentationen, KI-Bilder, Videos, Voiceovers und audiovisuelle Inhalte entwickeln.</p><p class="used-tools"><span data-de="Verwendete Tools" data-en="Tools used">Verwendete Tools</span>Canva · Kling AI · ElevenLabs · Suno · Leonardo AI</p></article>
+        <article class="skill-card reveal"><h3 data-de="Projektorganisation" data-en="Project Organisation">Projektorganisation</h3><p data-de="Informationen und Aufgaben übersichtlich organisieren und digitale Projekte zuverlässig umsetzen." data-en="Organising information and tasks clearly and delivering digital projects reliably.">Informationen und Aufgaben übersichtlich organisieren und digitale Projekte zuverlässig umsetzen.</p><p class="used-tools"><span data-de="Verwendete Tools" data-en="Tools used">Verwendete Tools</span>Notion · Miro · Microsoft Office · Google Workspace · CRM-Systeme</p></article>
+      </div>
+    </section>
+
+    <section class="portfolio-preview section-shell" id="work" aria-labelledby="work-title">
+      <div class="section-heading reveal">
+        <h2 id="work-title" class="kinetic-heading" data-de="Nicht nur gelernt. Praktisch umgesetzt." data-en="More than learning. Put into practice.">Nicht nur gelernt. Praktisch umgesetzt.</h2>
+      </div>
+
+      <div class="project-feature reveal">
+        <a class="project-visual visual-srl-feature project-visual-link" href="https://smart-remote-life.com/index.html" target="_blank" rel="noopener noreferrer" aria-label="Website von Smart Remote Life in einem neuen Tab öffnen">
+          <img class="srl-logo-3d" src="assets/smart-remote-life-logo.png" alt="">
+          <span class="srl-feature-node srl-node-brand">BRANDING</span>
+          <span class="srl-feature-node srl-node-content">CONTENT</span>
+          <span class="srl-feature-node srl-node-affiliate">AFFILIATE</span>
+          <span class="srl-feature-node srl-node-funnel">FUNNEL</span>
+          <span class="srl-feature-node srl-node-workflow">WORKFLOWS</span>
+        </a>
+        <div class="project-feature-copy">
+          <p class="project-kicker">Featured Project</p>
+          <h3>Smart Remote Life</h3>
+          <p data-de="Von der ersten Idee bis zum vernetzten digitalen Business: Für Smart Remote Life habe ich Positionierung, visuelle Markenwelt, SEO- und Content-System, Affiliate-Strukturen sowie erste Funnel- und KI-gestützte Workflows entwickelt. Das Projekt zeigt, wie ich Strategie, Gestaltung und praktische Umsetzung zu einem skalierbaren Gesamtsystem verbinde." data-en="From the first idea to a connected digital business: for Smart Remote Life, I developed the positioning, visual brand world, SEO and content system, affiliate structures, and initial funnel and AI-assisted workflows. The project demonstrates how I combine strategy, design and hands-on execution into one scalable system.">Von der ersten Idee bis zum vernetzten digitalen Business: Für Smart Remote Life habe ich Positionierung, visuelle Markenwelt, SEO- und Content-System, Affiliate-Strukturen sowie erste Funnel- und KI-gestützte Workflows entwickelt. Das Projekt zeigt, wie ich Strategie, Gestaltung und praktische Umsetzung zu einem skalierbaren Gesamtsystem verbinde.</p>
+          <a class="text-link" href="portfolio.html#smart-remote-life" data-de="Projekt ansehen" data-en="View project">Projekt ansehen <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <div class="portfolio-cta reveal">
+        <p data-de="Weitere Projekte zeigen meine Arbeit mit Webseiten, Content-Systemen, KI-Medien und Workflow-Konzepten." data-en="More projects show my work with websites, content systems, AI media and workflow concepts.">Weitere Projekte zeigen meine Arbeit mit Webseiten, Content-Systemen, KI-Medien und Workflow-Konzepten.</p>
+        <a class="button button-primary" href="portfolio.html" data-de="Gesamtes Portfolio öffnen" data-en="Open full portfolio">Gesamtes Portfolio öffnen</a>
+      </div>
+    </section>
+
+    <section class="contact section-shell" id="contact" aria-labelledby="contact-title">
+      <div class="contact-layout">
+        <div class="contact-copy reveal">
+          <h2 id="contact-title" class="kinetic-heading" data-de="Vielleicht passt genau diese Mischung in Ihr Team." data-en="Perhaps this combination is exactly what your team needs.">Vielleicht passt genau diese Mischung in Ihr Team.</h2>
+          <p data-de="Ich freue mich darauf, meine Erfahrung, meine Kreativität und meine Begeisterung für digitale Lösungen in einem passenden Unternehmen einzubringen." data-en="I look forward to bringing my experience, creativity and enthusiasm for digital solutions to the right company.">Ich freue mich darauf, meine Erfahrung, meine Kreativität und meine Begeisterung für digitale Lösungen in einem passenden Unternehmen einzubringen.</p>
+        </div>
+
+        <form class="contact-form reveal" name="portfolio-contact" action="mailto:mette.tentary@outlook.de" method="post" enctype="text/plain" data-email-recipient="mette.tentary@outlook.de">
+          <div class="contact-form-grid">
+            <label><span><span data-de="Name" data-en="Name">Name</span> <b aria-hidden="true">*</b></span><input type="text" name="name" autocomplete="name" required data-placeholder-de="Vor- und Nachname" data-placeholder-en="First and last name" placeholder="Vor- und Nachname"></label>
+            <label><span><span data-de="E-Mail" data-en="Email">E-Mail</span> <b aria-hidden="true">*</b></span><input type="email" name="email" autocomplete="email" required data-placeholder-de="name@firma.de" data-placeholder-en="name@company.com" placeholder="name@firma.de"></label>
+            <label><span data-de="Telefon" data-en="Phone">Telefon</span><input type="tel" name="phone" autocomplete="tel" data-placeholder-de="optional" data-placeholder-en="optional" placeholder="optional"></label>
+            <label><span data-de="Anliegen" data-en="Enquiry">Anliegen</span><select name="subject" required>
+              <option value="" selected disabled data-de="Bitte wählen" data-en="Please select">Bitte wählen</option>
+              <option value="remote-part-time" data-de="Remote-Teilzeitstelle" data-en="Remote part-time position">Remote-Teilzeitstelle</option>
+              <option value="project" data-de="Projektanfrage" data-en="Project enquiry">Projektanfrage</option>
+              <option value="collaboration" data-de="Freie Zusammenarbeit" data-en="Freelance collaboration">Freie Zusammenarbeit</option>
+              <option value="other" data-de="Sonstiges" data-en="Other">Sonstiges</option>
+            </select></label>
+          </div>
+          <label class="message-field"><span><span data-de="Nachricht" data-en="Message">Nachricht</span> <b aria-hidden="true">*</b></span><textarea name="message" rows="6" required data-placeholder-de="Worum geht es?" data-placeholder-en="How can I help?" placeholder="Worum geht es?"></textarea></label>
+          <label class="consent"><input type="checkbox" name="privacy" required><span><span data-de="Ich habe die " data-en="I have read the ">Ich habe die </span><a href="datenschutz.html" data-de="Datenschutzerklärung" data-en="privacy policy">Datenschutzerklärung</a><span data-de=" gelesen. Beim Absenden öffnet sich mein E-Mail-Programm; die Nachricht wird erst durch mein eigenes Versenden übermittelt." data-en=". Submitting opens my email application; the message is only transmitted when I send it myself."> gelesen. Beim Absenden öffnet sich mein E-Mail-Programm; die Nachricht wird erst durch mein eigenes Versenden übermittelt.</span></span></label>
+          <button class="button button-primary" type="submit" data-de="Nachricht senden" data-en="Send message">Nachricht senden</button>
+          <p class="form-note" data-de="Alternativ erreichen Sie mich direkt unter mette.tentary@outlook.de." data-en="Alternatively, email me directly at mette.tentary@outlook.de.">Alternativ erreichen Sie mich direkt unter mette.tentary@outlook.de.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Marit Silva Gebhardt</p>
+    <div><a href="impressum.html" data-de="Impressum" data-en="Legal notice">Impressum</a><a href="datenschutz.html" data-de="Datenschutz" data-en="Privacy">Datenschutz</a></div>
+  </footer>
+</body>
+</html>
