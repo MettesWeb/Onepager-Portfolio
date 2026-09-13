@@ -4,7 +4,7 @@
   let language = storedLanguage === 'en' ? 'en' : 'de';
   let particleHeadingController = null;
 
-  function setLanguage(nextLanguage) {
+  function setLanguage(nextLanguage, persist = false) {
     language = nextLanguage;
     root.lang = language;
     document.querySelectorAll('[data-de][data-en]').forEach((element) => {
@@ -25,11 +25,11 @@
     });
     document.querySelectorAll('.kinetic-heading').forEach(wrapKineticText);
     window.requestAnimationFrame(() => particleHeadingController?.refresh());
-    localStorage.setItem('portfolio-language', language);
+    if (persist) localStorage.setItem('portfolio-language', language);
   }
 
   document.querySelectorAll('.lang-btn').forEach((button) => {
-    button.addEventListener('click', () => setLanguage(button.dataset.lang));
+    button.addEventListener('click', () => setLanguage(button.dataset.lang, true));
   });
   setLanguage(language);
 
