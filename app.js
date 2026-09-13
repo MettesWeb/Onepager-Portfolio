@@ -4,7 +4,7 @@
   let language = storedLanguage === 'en' ? 'en' : 'de';
   let particleHeadingController = null;
 
-  function setLanguage(nextLanguage, persist = false) {
+  function setLanguage(nextLanguage) {
     language = nextLanguage;
     root.lang = language;
     document.querySelectorAll('[data-de][data-en]').forEach((element) => {
@@ -25,11 +25,11 @@
     });
     document.querySelectorAll('.kinetic-heading').forEach(wrapKineticText);
     window.requestAnimationFrame(() => particleHeadingController?.refresh());
-    if (persist) localStorage.setItem('portfolio-language', language);
+    localStorage.setItem('portfolio-language', language);
   }
 
   document.querySelectorAll('.lang-btn').forEach((button) => {
-    button.addEventListener('click', () => setLanguage(button.dataset.lang, true));
+    button.addEventListener('click', () => setLanguage(button.dataset.lang));
   });
   setLanguage(language);
 
@@ -37,6 +37,16 @@
   if (year) year.textContent = new Date().getFullYear();
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.querySelectorAll('[data-scroll-top]').forEach((button) => {
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      if (window.location.hash) {
+        window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+      }
+    });
+  });
 
   function setupParticleHeading(element) {
     if (!element || reducedMotion || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return null;
